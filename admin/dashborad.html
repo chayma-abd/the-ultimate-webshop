@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productinventaris - Admin</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <nav class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-cogs"></i> Zara Admin</h2>
+            <p>Beheerpaneel</p>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="active"><a href="dashboard.html"><i class="fas fa-boxes"></i> Producten</a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> Statistieken</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Klanten</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> Bestellingen</a></li>
+            <li><a href="edit-product.html"><i class="fas fa-plus-circle"></i> Product toevoegen</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Instellingen</a></li>
+            <li><a href="../index.html"><i class="fas fa-store"></i> Naar webshop</a></li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <div class="admin-info">
+                <div>
+                    <h4>Beheerder</h4>
+                    <p>admin@zara.com</p>
+                </div>
+            </div>
+            <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Uitloggen</a>
+        </div>
+    </nav>
+    
+    <main class="admin-main">
+        <header class="admin-header">
+            <h1><i class="fas fa-boxes"></i> Productinventaris</h1>
+            <div class="header-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="Zoek producten...">
+                </div>
+                <button class="btn-primary" onclick="location.href='edit-product.html'">
+                    <i class="fas fa-plus"></i> Nieuw product
+                </button>
+            </div>
+        </header>
+        
+        <div class="content-container">
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label>Filter op:</label>
+                    <select>
+                        <option>Alle collecties</option>
+                        <option>Red Collection</option>
+                        <option>Bloom Collection</option>
+                        <option>Zara Emotions</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Voorraad:</label>
+                    <select>
+                        <option>Alle</option>
+                        <option>Op voorraad</option>
+                        <option>Bijna uitverkocht</option>
+                        <option>Uitverkocht</option>
+                    </select>
+                </div>
+                
+                <button class="btn-secondary">
+                    <i class="fas fa-filter"></i> Filter toepassen
+                </button>
+            </div>
+            
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Productnaam</th>
+                            <th>Collectie</th>
+                            <th>Voorraad</th>
+                            <th>Prijs</th>
+                            <th>Acties</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Red Temptation</td>
+                            <td>Red Collection</td>
+                            <td>42/50</td>
+                            <td>€32,99</td>
+                            <td class="action-buttons">
+                                <button class="btn-edit" title="Bewerken">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-delete" title="Verwijderen">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>002</td>
+                            <td>Red Temptation Summer</td>
+                            <td>Red Collection</td>
+                            <td>5/50</td>
+                            <td>€34,99</td>
+                            <td class="action-buttons">
+                                <button class="btn-edit" title="Bewerken">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-delete" title="Verwijderen">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>003</td>
+                            <td>Lightly Bloom</td>
+                            <td>Bloom Collection</td>
+                            <td>95/100</td>
+                            <td>€9,99</td>
+                            <td class="action-buttons">
+                                <button class="btn-edit" title="Bewerken">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-delete" title="Verwijderen">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>004</td>
+                            <td>Fleur D'Oranger</td>
+                            <td>Zara Emotions</td>
+                            <td>18/30</td>
+                            <td>€31,99</td>
+                            <td class="action-buttons">
+                                <button class="btn-edit" title="Bewerken">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-delete" title="Verwijderen">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>005</td>
+                            <td>Immortal Vanilla</td>
+                            <td>Zara Emotions</td>
+                            <td>1/20</td>
+                            <td>€36,99</td>
+                            <td class="action-buttons">
+                                <button class="btn-edit" title="Bewerken">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-delete" title="Verwijderen">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>006</td>
+                            <td>Bloom Duo Set</td>
+                            <td>Bloom Collection</td>
+                            <td>9/20</td>
+                            <td>€49,99</td>
+                            <td class="action-buttons">
+                                <button class="btn-edit" title="Bewerken">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-delete" title="Verwijderen">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination">
+                <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        document.querySelector('.search-box input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('.admin-table tbody tr');
+            
+            rows.forEach(row => {
+                const productName = row.cells[1].textContent.toLowerCase();
+                row.style.display = productName.includes(searchTerm) ? '' : 'none';
+            });
+        });
+        
+        document.querySelectorAll('.btn-delete').forEach(button => {
+            button.addEventListener('click', function() {
+                if(confirm('Weet je zeker dat je dit product wilt verwijderen?')) {
+                    const row = this.closest('tr');
+                    row.style.opacity = '0.5';
+                    setTimeout(() => row.remove(), 300);
+                }
+            });
+        });
+        
+        document.querySelectorAll('.btn-edit').forEach(button => {
+            button.addEventListener('click', function() {
+                window.location.href = 'edit-product.html';
+            });
+        });
+    </script>
+</body>
+</html>
