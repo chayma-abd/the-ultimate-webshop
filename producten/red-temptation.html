@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="zara-perfume-2026" content="scent-chronology=v2.0.26">
+    <title>Red Temptation - Zara Cosmetics</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* EXTRA CSS VOOR DETAILPAGINA - SIMPEL */
+        .product-detail {
+            padding: 2rem 0;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #795548;
+        }
+        
+        .breadcrumb a {
+            color: #795548;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            color: #ff5252;
+        }
+        
+        .product-detail-container {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+        
+        @media (max-width: 768px) {
+            .product-detail-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+        
+        .product-image-side {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .product-info-side {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .main-product-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            object-fit: contain;
+        }
+        
+        .product-badge {
+            display: inline-block;
+            background: #ff5252;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin: 0.5rem 0.3rem;
+            text-transform: uppercase;
+        }
+        
+        .product-main-title {
+            font-size: 2rem;
+            color: #ff5252;
+            margin-bottom: 0.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .product-collection-name {
+            color: #795548;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-type {
+            color: #795548;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-description h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #5d4037;
+        }
+        
+        .product-description p {
+            line-height: 1.6;
+            color: #795548;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .fragrance-notes {
+            margin-bottom: 1.5rem;
+        }
+        
+        .fragrance-notes h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #5d4037;
+        }
+        
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+        }
+        
+        @media (max-width: 480px) {
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .note-card {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .note-card h4 {
+            color: #ff5252;
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .note-card p {
+            color: #795548;
+            font-size: 0.8rem;
+        }
+        
+        .product-specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 480px) {
+            .product-specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .spec-item {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #5d4037;
+            font-size: 0.8rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .spec-value {
+            color: #795548;
+            font-size: 0.8rem;
+        }
+        
+        .purchase-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .price-display {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff5252;
+            margin-bottom: 1rem;
+        }
+        
+        .size-select, .quantity-select {
+            margin-bottom: 1rem;
+        }
+        
+        .size-select label, .quantity-select label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            color: #5d4037;
+            font-size: 0.9rem;
+        }
+        
+        .size-select select {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            font-family: 'Raleway', sans-serif;
+            background: #f9f9f9;
+            font-size: 0.9rem;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .qty-btn {
+            width: 35px;
+            height: 35px;
+            border: 1px solid #eee;
+            background: white;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        .qty-input {
+            width: 50px;
+            height: 35px;
+            text-align: center;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background: #ff5252;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .add-to-cart-btn:hover {
+            background: #d32f2f;
+        }
+        
+        /* Badge voor BESTSELLER */
+        .bestseller-badge {
+            background: #ff9800;
+            display: inline-block;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/zara..png" alt="Zara Cosmetics Logo" class="logo-image">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">Red Collection</a></li>
+                    <li><a href="#">Bloom Collection</a></li>
+                    <li><a href="#">Emotions</a></li>
+                    <li><a href="#">Nieuwe geuren</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="product-detail">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> > 
+                <a href="#">Red Collection</a> > 
+                <span>Red Temptation</span>
+            </div>
+            
+            <div class="product-detail-container">
+                <!-- LINKERKANT: Foto -->
+                <div class="product-image-side">
+                    <div class="bestseller-badge">BESTSELLER</div>
+                    <img src="../images/7.jpg.jpeg" alt="Red Temptation" class="main-product-image">
+                </div>
+                
+                <!-- RECHTERKANT: Info -->
+                <div class="product-info-side">
+                    <h1 class="product-main-title">RED TEMPTATION</h1>
+                    <p class="product-collection-name">Red Collection</p>
+                    <p class="product-type">EAU DE PARFUM</p>
+                    
+                    <div class="product-description">
+                        <h3>Beschrijving</h3>
+                        <p>Een warme en verleidelijke geur met vanille en amber.</p>
+                    </div>
+                    
+                    <div class="fragrance-notes">
+                        <h3>Geurnoten</h3>
+                        <div class="notes-grid">
+                            <div class="note-card">
+                                <h4>Topnoten</h4>
+                                <p>Framboos</p>
+                            </div>
+                            <div class="note-card">
+                                <h4>Hartnoten</h4>
+                                <p>Vanille</p>
+                            </div>
+                            <div class="note-card">
+                                <h4>Basenoten</h4>
+                                <p>Amber</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Intensiteit</div>
+                            <div class="spec-value">Hoog</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Houdbaarheid</div>
+                            <div class="spec-value">8-10 uur</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Geschikt voor</div>
+                            <div class="spec-value">Het hele jaar</div>
+                        </div>
+                    </div>
+                    
+                    <div class="purchase-box">
+                        <div class="price-display">€32,99</div>
+                        
+                        <div class="size-select">
+                            <label for="size">Maat:</label>
+                            <select id="size">
+                                <option value="30ml">30ml - €24,99</option>
+                                <option value="50ml" selected>50ml - €32,99</option>
+                                <option value="100ml">100ml - €44,99</option>
+                            </select>
+                        </div>
+                        
+                        <div class="quantity-select">
+                            <label for="quantity">Aantal:</label>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" id="quantity" class="qty-input" value="1" min="1" max="10">
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-shopping-bag"></i> In winkelwagen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-logo">
+                <h3>zara<span class="logo-dot">.</span></h3>
+                <p class="footer-tagline">cosmetics<br><span class="since">since 2026</span></p>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Collecties</h4>
+                    <ul>
+                        <li><a href="#">Red Collection</a></li>
+                        <li><a href="#">Bloom Collection</a></li>
+                        <li><a href="#">Zara Emotions</a></li>
+                        <li><a href="#">Day Collection</a></li>
+                        <li><a href="#">Limited Editions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Service</h4>
+                    <ul>
+                        <li><a href="#">Bestellen & levering</a></li>
+                        <li><a href="#">Retourneren</a></li>
+                        <li><a href="#">Geur advies</a></li>
+                        <li><a href="#">Cadeaubonnen</a></li>
+                        <li><a href="#">Store locator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> 0800-123456</li>
+                        <li><i class="fas fa-envelope"></i> info@zara-cosmetics.nl</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Parfumlaan 2026, Amsterdam</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Zara Cosmetics. Alle rechten voorbehouden. | <a href="#">Privacy</a> | <a href="#">Voorwaarden</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Alleen menu toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.main-nav ul').classList.toggle('show');
+        });
+        
+        // Quantity controls
+        document.querySelector('.qty-btn.minus')?.addEventListener('click', function() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        });
+        
+        document.querySelector('.qty-btn.plus')?.addEventListener('click', function() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) < 10) {
+                input.value = parseInt(input.value) + 1;
+            }
+        });
+        
+        // Add to cart doet niets
+        document.querySelector('.add-to-cart-btn')?.addEventListener('click', function() {
+            // NIETS DOEN - zoals gevraagd
+        });
+    </script>
+</body>
+</html>
