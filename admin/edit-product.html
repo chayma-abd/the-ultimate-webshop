@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Beheren - Admin</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <nav class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-cogs"></i> Zara Admin</h2>
+            <p>Beheerpaneel</p>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html"><i class="fas fa-boxes"></i> Producten</a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> Statistieken</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Klanten</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> Bestellingen</a></li>
+            <li class="active"><a href="edit-product.html"><i class="fas fa-plus-circle"></i> Product toevoegen</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Instellingen</a></li>
+            <li><a href="../index.html"><i class="fas fa-store"></i> Naar webshop</a></li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <div class="admin-info">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=3a86ff&color=fff" alt="Admin">
+                <div>
+                    <h4>Beheerder</h4>
+                    <p>admin@zara.com</p>
+                </div>
+            </div>
+            <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Uitloggen</a>
+        </div>
+    </nav>
+    
+    <main class="admin-main">
+        <header class="admin-header">
+            <h1><i class="fas fa-edit"></i> Product beheren</h1>
+            <div class="header-actions">
+                <button class="btn-secondary" onclick="location.href='dashboard.html'">
+                    <i class="fas fa-arrow-left"></i> Terug
+                </button>
+            </div>
+        </header>
+        
+        <div class="content-container">
+            <form class="product-form">
+                <div class="form-section">
+                    <h2><i class="fas fa-info-circle"></i> Basisgegevens</h2>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="product-name">Productnaam *</label>
+                            <input type="text" id="product-name" placeholder="Bijv. Red Temptation Summer" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-id">Product ID</label>
+                            <input type="text" id="product-id" placeholder="Auto-generated" disabled>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="collection">Collectie *</label>
+                            <select id="collection" required>
+                                <option value="">Selecteer collectie</option>
+                                <option value="red">Red Collection</option>
+                                <option value="bloom">Bloom Collection</option>
+                                <option value="emotions">Zara Emotions</option>
+                                <option value="new">Nieuwe geuren</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-type">Type *</label>
+                            <select id="product-type" required>
+                                <option value="">Selecteer type</option>
+                                <option value="eau-de-parfum">Eau de Parfum</option>
+                                <option value="eau-de-toilette">Eau de Toilette</option>
+                                <option value="body-mist">Body Mist</option>
+                                <option value="set">Set</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2><i class="fas fa-tag"></i> Prijs en Voorraad</h2>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="price">Prijs (€) *</label>
+                            <input type="number" id="price" min="0" step="0.01" placeholder="34.99" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="stock">Voorraad *</label>
+                            <input type="number" id="stock" min="0" placeholder="50" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="min-stock">Minimum voorraad</label>
+                            <input type="number" id="min-stock" min="0" placeholder="10">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sku">SKU Code</label>
+                            <input type="text" id="sku" placeholder="ZARA-RT-SUMMER-50">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox">
+                            <input type="checkbox" id="track-stock"> Voorraad bijhouden
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2><i class="fas fa-list-alt"></i> Productdetails</h2>
+                    
+                    <div class="form-group">
+                        <label for="description">Beschrijving *</label>
+                        <textarea id="description" rows="4" placeholder="Beschrijf het product..." required></textarea>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="top-notes">Topnoten</label>
+                            <input type="text" id="top-notes" placeholder="Rode bes, Mandarijn">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="heart-notes">Hartnoten</label>
+                            <input type="text" id="heart-notes" placeholder="Vanille, Roos">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="base-notes">Basenoten</label>
+                            <input type="text" id="base-notes" placeholder="Amber, Musk">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2><i class="fas fa-image"></i> Afbeeldingen</h2>
+                    
+                    <div class="form-group">
+                        <label for="main-image">Hoofdafbeelding URL *</label>
+                        <input type="url" id="main-image" placeholder="https://voorbeeld.com/afbeelding.jpg" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Extra afbeeldingen</label>
+                        <div class="file-upload">
+                            <input type="file" id="extra-images" multiple>
+                            <label for="extra-images" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i> Klik om bestanden te uploaden
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2><i class="fas fa-tags"></i> Labels en Status</h2>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox">
+                            <input type="checkbox" name="labels" value="new"> Nieuw
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="labels" value="bestseller"> Bestseller
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="labels" value="sale"> Sale
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="labels" value="limited"> Limited Edition
+                        </label>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="status">Status *</label>
+                            <select id="status" required>
+                                <option value="active">Actief</option>
+                                <option value="inactive">Inactief</option>
+                                <option value="draft">Concept</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="release-date">Releasedatum</label>
+                            <input type="date" id="release-date">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary">
+                        <i class="fas fa-times"></i> Annuleren
+                    </button>
+                    <button type="button" class="btn-secondary">
+                        <i class="fas fa-eye"></i> Voorbeeld
+                    </button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Product opslaan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <script>
+        document.querySelector('.product-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Product succesvol opgeslagen!');
+        });
+        
+        document.querySelector('[type="button"].btn-secondary').addEventListener('click', function() {
+            if(confirm('Weet je zeker dat je het formulier wilt resetten?')) {
+                document.querySelector('.product-form').reset();
+            }
+        });
+        
+        document.getElementById('product-name').addEventListener('input', function() {
+            const name = this.value.toLowerCase().replace(/\s+/g, '-').substring(0, 10);
+            document.getElementById('product-id').value = name ? 'PROD-' + name.toUpperCase() : '';
+        });
+    </script>
+</body>
+</html>
